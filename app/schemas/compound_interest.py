@@ -1,4 +1,5 @@
 from pydantic import BaseModel, Field
+from typing import List
 
 
 class CompoundInterestInput(BaseModel):
@@ -14,10 +15,25 @@ class CompoundInterestInput(BaseModel):
     frequency: int = Field(...,
                            description="The number of times interest is applied per time period.",
                            gt=0)
+    contribution: float = 0
+    contribution_frequency: int = 12
 
 
-class CompoundInterestOutput(BaseModel):
-    total_amount: float = Field(...,
-                                description="The total amount after the time period, which includes the principal amount plus the compounded interest.")
-    interest_amount: float = Field(...,
-                                   description="The total amount of interest earned or paid over the time period.")
+class CompoundInterestYearDetail(BaseModel):
+    Year: int = Field(..., description="The year number.")
+    Initial_Balance: float = Field(...,
+                                   description="The balance at the start of the year.")
+    Yearly_Contributions: float = Field(
+        ..., description="The total contributions made during the year.")
+    Total_Contributions: float = Field(
+        ..., description="The cumulative contributions up to this year.")
+    Yearly_Interest: float = Field(...,
+                                   description="The interest earned or paid during the year.")
+    Total_Interest: float = Field(...,
+                                  description="The cumulative interest up to this year.")
+    Final_Balance: float = Field(
+        ..., description="The balance at the end of the year after adding contributions and interest.")
+
+
+class CompoundInterestOutput(List[CompoundInterestYearDetail]):
+    pass
