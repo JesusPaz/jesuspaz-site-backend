@@ -12,5 +12,5 @@ async def calculate_compound_interest(
     """
     Calculate compound interest based on provided input.
     """
-    result = compound_interest_service.calculate(data)
+    result = compound_interest_service.calculate_compound_interest(data)
     return result
