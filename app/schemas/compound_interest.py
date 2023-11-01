@@ -8,7 +8,7 @@ class CompoundInterestInput(BaseModel):
                              gt=0)
     rate: float = Field(...,
                         description="The annual interest rate (as a percentage). For example, 10 signifies 10%.",
-                        gt=0, lt=100)
+                        gt=0, lt=1000)
     time: float = Field(...,
                         description="The number of years the money is invested or borrowed for.",
                         gt=0)

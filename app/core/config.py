@@ -14,6 +14,7 @@ class Config:
     # CORS Configuration (si quieres permitir CORS)
     ORIGINS = [
         "http://localhost:8000",
+        "http://localhost:3000",
         "https://localhost:8000",
         "http://localhost",
         "http://jesuspaz.com",
