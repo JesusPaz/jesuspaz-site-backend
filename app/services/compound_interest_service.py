@@ -15,11 +15,11 @@ def calculate_compound_interest_details(data: CompoundInterestInput) -> Compound
         initial_balance_for_year = principal
 
         # Compound interest for the principal
-        principal = principal * (1 + rate/frequency)**frequency
+        principal = principal * (1 + rate / frequency)**frequency
 
         # Future value of the contributions for this year
         contributions_fv = contribution * \
-            ((1 + rate/frequency)**frequency - 1) * (frequency/rate)
+            ((1 + rate / frequency)**frequency - 1) * (frequency / rate)
 
         # Update principal with the contributions
         principal += contributions_fv
