@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter
 from app.schemas.compound_interest import CompoundInterestInput, CompoundInterestYearDetail
 from app.services import compound_interest_service
 from typing import List
