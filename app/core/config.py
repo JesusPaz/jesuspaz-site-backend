@@ -19,4 +19,6 @@ class Config:
         "http://localhost",
         "http://jesuspaz.com",
         "https://jesuspaz.com",
+        "https://www.jesuspaz.com",
+        "https://jesuspaz-site-frontend.vercel.app"
     ]
